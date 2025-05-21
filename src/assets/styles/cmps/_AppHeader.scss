@@ -1,0 +1,34 @@
+.app-header {
+    background-image: repeating-linear-gradient(
+    to right,
+    #138389e4,       // Stripe 1
+    #138389e4 40px,   // Width of stripe 1
+    #138389 60px,   // Stripe 2 start
+    #138389 60px,   // Width of stripe 2
+    // #f9ad32 40px,   // Stripe 3 start
+    // #f9ad32 60px    // Width of stripe 3
+  );
+  
+  background-size: auto;
+  color: white;
+  padding-block: 1em;
+
+  color: $clr1bg;
+  padding-block: 1em;
+
+  .logo {
+    font-family: libre, sans-serif;
+    font-size: 6rem;
+    img{
+      max-width: 400px;
+    }
+  }
+
+  nav {
+    margin-block-end: 1em;
+
+    a:not(:first-of-type) {
+      margin-inline-start: 0.5em;
+    }
+  }
+}

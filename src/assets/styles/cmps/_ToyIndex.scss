@@ -1,0 +1,17 @@
+.toy-index {
+  display: grid;
+
+  .pagination {
+    text-align: center;
+  }
+
+  .loader-container {
+    align-self: center;
+  }
+}
+
+.toy-details {
+  span {
+    font-weight: 400;
+  }
+}

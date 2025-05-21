@@ -1,0 +1,15 @@
+.branch-img {
+    img {
+      width: 40px;
+    }
+  }
+  
+  .branches-btns {
+    button {
+      &.selected {
+        background-color: $clr2;
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }

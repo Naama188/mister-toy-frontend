@@ -1,0 +1,38 @@
+.toy-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1em;
+    justify-content: center;
+    margin-block: 1em;
+  
+    ul {
+      display: contents;
+      list-style: none;
+      padding: 0;
+      margin-block: 0 0.5em;
+    }
+  
+    li {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      background-color: $clr1bg;
+      border-radius: 4px;
+      box-shadow: #00000026 1.95px 1.95px 2.6px;
+      min-height: 200px;
+    }
+  
+    @media (min-width: 630px) {
+      ul {
+        flex-flow: row wrap;
+      }
+    }
+  }
+  
+  .green {
+    color: green;
+  }
+  
+  .red {
+    color: red;
+  }

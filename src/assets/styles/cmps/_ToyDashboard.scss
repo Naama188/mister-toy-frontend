@@ -1,0 +1,8 @@
+.toy-dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5vh auto;
+    max-width: max(50vw, 500px);
+    gap: 5rem;
+}
