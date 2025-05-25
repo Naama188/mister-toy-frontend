@@ -1,0 +1,15 @@
+.review-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+
+    li {
+        padding: 1em;
+        margin-block: 1em;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+
+    button {
+        align-self: end;
+    }
+}

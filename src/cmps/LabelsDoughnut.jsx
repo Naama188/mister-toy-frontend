@@ -26,12 +26,13 @@ ChartJS.register(
 export function LabelsDoughnut({ labelCounts = {} }) {
 
     function getData(labelCounts) {
-        const data = {
-            labels: Object.keys(labelCounts),
+        const data = {           
+            labels: labelCounts.map(item => item.label),
             datasets: [
                 {
                     label: '# of Toys',
-                    data: Object.values(labelCounts).map(labelData => labelData.total),
+                            data: Object.values(labelCounts).map(labelData => labelData.total),
+                        
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',

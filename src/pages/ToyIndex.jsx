@@ -19,6 +19,7 @@ import { PopUp } from '../cmps/PopUp.jsx'
 export function ToyIndex() {
     
     const toys = useSelector(storeState => storeState.toyModule.toys)
+    const user = useSelector(storeState => storeState.userModule.loggedInUser)
     const filterBy = useSelector(storeState => storeState.toyModule.filterBy)
     const sortBy = useSelector(storeState => storeState.toyModule.sortBy)
     const isLoading = useSelector(
@@ -73,18 +74,34 @@ export function ToyIndex() {
                 onSetSort={onSetSort}
                 toyLabels={toyLabels}
             />
-            <div style={{ marginBlockStart: '0.5em', textAlign: 'center' }}>
+            {/* <div style={{ marginBlockStart: '0.5em', textAlign: 'center' }}>
                 <button style={{ marginInline: 0 }}>
                     <Link to="/toy/edit">Add Toy</Link>
                 </button>
+            </div> */}
+{user && user.isAdmin && (
+            <div style={{ marginBlockStart: '0.5em', textAlign: 'center' }}>
+                <button style={{ marginInline: 0 }}>
+                
+                <Link
+                    className="btn"
+                    to="/toy/edit"
+                    style={{ alignSelf: 'center' }}
+                >
+                    Add Toy
+                </Link>
+            
+                </button>
             </div>
+)}
+
 
             {<PaginationButtons
                 pageIdx={pageIdx}
                 setPageIdx={setPageIdx}
             />}
             {isLoading && <Loader />}
-            {!isLoading && <ToyList toys={toys} onRemoveToy={onRemoveToy} />}
+            {!isLoading && <ToyList toys={toys} onRemoveToy={onRemoveToy} loggedInUser={user} />}
             <PopUp footer={<footer>An Image</footer>} isOpen={pageIdx === 2}>
                 <img src='./img/TOYSTOREHERO_IMG.png' />
                 <button>Send</button>

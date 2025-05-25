@@ -71,7 +71,7 @@ export function LabelsBarChart({ labelCounts = {} }) {
             dataInStock.push(labelInStockPercent)
             dataTotal.push(100 - labelInStockPercent)
         })
-        data.labels = labels
+        data.labels= labelCounts.map(item => item.label),
         data.datasets[0].data = dataInStock
         data.datasets[1].data = dataTotal
         return data
